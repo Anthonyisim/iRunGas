@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iRunGas — Lagos Cooking Gas, Delivered Fast</title>
+  <meta name="description" content="Order LPG refills from certified local suppliers. Live tracking. Transparent pricing. Delivered in under 45 minutes anywhere in Lagos." />
+  <meta property="og:title" content="iRunGas — Cooking Gas Delivered in 45 Minutes" />
+  <meta property="og:description" content="Lagos's smartest LPG delivery platform. Order, track, receive." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔥</text></svg>" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet" />
+
+  <!-- Supabase CDN — must load before supabase.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <header id="navbar">
+    <div class="container">
+      <nav class="nav-inner" role="navigation" aria-label="Main navigation">
+        <a href="#" class="logo" aria-label="iRunGas home">
+          <span class="logo-flame" aria-hidden="true">
+            <svg width="18" height="22" viewBox="0 0 18 22" fill="none">
+              <path d="M9 1C9 1 2 8 2 13.5C2 17.09 5.13 20 9 20C12.87 20 16 17.09 16 13.5C16 8 9 1Z" fill="currentColor"/>
+              <ellipse cx="9" cy="14" rx="2.8" ry="3" fill="white" opacity=".35"/>
+            </svg>
+          </span>
+          <span class="logo-text">iRunGas</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#suppliers">Suppliers</a></li>
+          <li><a href="#coverage">Coverage</a></li>
+        </ul>
+
+        <div class="nav-end">
+          <a href="#waitlist" class="nav-cta">Get early access</a>
+          <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true" role="dialog">
+      <ul role="list">
+        <li><a href="#how" class="mob-link">How it works</a></li>
+        <li><a href="#features" class="mob-link">Features</a></li>
+        <li><a href="#suppliers" class="mob-link">Suppliers</a></li>
+        <li><a href="#coverage" class="mob-link">Coverage</a></li>
+        <li><a href="#waitlist" class="btn-primary mob-cta">Get early access →</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+  <!-- ═══ HERO ═══ -->
+  <section id="hero" aria-label="Hero">
+    <div class="container">
+      <div class="hero-layout">
+
+        <div class="hero-left">
+          <div class="hero-badge fade-in" style="--d:.1s">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            Launching Q3 2026 · Lagos
+          </div>
+
+          <h1 class="hero-h1 fade-in" style="--d:.2s">
+            Gas delivered.<br>The way it<br><em>should</em> be.
+          </h1>
+
+          <p class="hero-p fade-in" style="--d:.35s">
+            Order LPG refills from certified local suppliers.
+            Real-time tracking, transparent pricing, and delivery
+            in under 45 minutes — anywhere in Lagos.
+          </p>
+
+          <div class="hero-actions fade-in" style="--d:.45s">
+            <a href="#waitlist" class="btn-primary">
+              Join the waitlist
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#how" class="btn-ghost">See how it works</a>
+          </div>
+
+          <div class="hero-social-proof fade-in" style="--d:.55s">
+            <div class="avatar-stack" aria-hidden="true">
+              <div class="av" style="background:#E8400C">C</div>
+              <div class="av" style="background:#1D7A55">K</div>
+              <div class="av" style="background:#111318">T</div>
+              <div class="av" style="background:#B45309">A</div>
+            </div>
+            <p><strong>340+ people</strong> already on the waitlist</p>
+          </div>
+        </div>
+
+        <div class="hero-right fade-in" style="--d:.3s" aria-hidden="true">
+          <!-- App mockup -->
+          <div class="mockup-card">
+            <div class="mc-topbar">
+              <div class="mc-dot mc-dot-red"></div>
+              <div class="mc-dot mc-dot-amber"></div>
+              <div class="mc-dot mc-dot-green"></div>
+            </div>
+
+            <div class="mc-status-row">
+              <span class="mc-live-tag">
+                <span class="pulse-dot pulse-dot--sm"></span> Live order
+              </span>
+              <span class="mc-time">9:41 AM</span>
+            </div>
+
+            <p class="mc-greeting">Morning, <strong>Chisom</strong> 👋</p>
+
+            <div class="mc-order-row">
+              <div class="mc-order-left">
+                <div class="mc-flame-icon">🔥</div>
+                <div>
+                  <p class="mc-order-name">12.5 kg Refill</p>
+                  <p class="mc-order-sup">Alhaji Gas Co. · Surulere</p>
+                </div>
+              </div>
+              <div class="mc-order-price">₦18,750</div>
+            </div>
+
+            <div class="mc-track">
+              <p class="mc-track-label">Live tracking</p>
+              <div class="mc-steps">
+                <div class="mc-step mc-step--done">
+                  <div class="mc-step-dot"></div>
+                  <div class="mc-step-line mc-step-line--done"></div>
+                  <span>Confirmed</span>
+                </div>
+                <div class="mc-step mc-step--done">
+                  <div class="mc-step-dot"></div>
+                  <div class="mc-step-line mc-step-line--active"></div>
+                  <span>Dispatched</span>
+                </div>
+                <div class="mc-step mc-step--active">
+                  <div class="mc-step-dot mc-step-dot--active"></div>
+                  <div class="mc-step-line"></div>
+                  <span class="mc-step-active-text">En Route</span>
+                </div>
+                <div class="mc-step mc-step--idle">
+                  <div class="mc-step-dot mc-step-dot--idle"></div>
+                  <div class="mc-step-line"></div>
+                  <span class="mc-step-idle-text">Delivered</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mc-eta-row">
+              <div>
+                <p class="mc-eta-label">Estimated arrival</p>
+                <p class="mc-eta-value">28 <span>min</span></p>
+              </div>
+              <button class="mc-track-btn" tabindex="-1">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C4.79 1 3 2.79 3 5c0 3 4 8 4 8s4-5 4-8c0-2.21-1.79-4-4-4z" fill="currentColor" opacity=".2" stroke="currentColor" stroke-width="1.2"/><circle cx="7" cy="5" r="1.5" fill="currentColor"/></svg>
+                Track live
+              </button>
+            </div>
+          </div>
+
+          <!-- Floating chips -->
+          <div class="chip chip--tl">
+            <span class="chip-icon">⚡</span>
+            <div>
+              <p class="chip-label">Fastest ETA</p>
+              <p class="chip-val">45 min max</p>
+            </div>
+          </div>
+          <div class="chip chip--br">
+            <span class="chip-icon">🛡</span>
+            <div>
+              <p class="chip-label">Status</p>
+              <p class="chip-val">NMDPRA verified</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Large decorative word -->
+    <div class="hero-wordmark" aria-hidden="true">iRunGas</div>
+  </section>
+
+
+  <!-- ═══ TICKER ═══ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-inner">
+      <span class="tk"><strong>520,000+</strong> target households</span>
+      <span class="tk-dot">●</span>
+      <span class="tk">Average refill every <strong>3.5 weeks</strong></span>
+      <span class="tk-dot">●</span>
+      <span class="tk"><strong>NMDPRA vetted</strong> suppliers only</span>
+      <span class="tk-dot">●</span>
+      <span class="tk">Delivering in <strong>under 45 minutes</strong></span>
+      <span class="tk-dot">●</span>
+      <span class="tk">Pay on delivery — <strong>zero upfront risk</strong></span>
+      <span class="tk-dot">●</span>
+      <span class="tk">Launching <strong>Q3 2026</strong> · Surulere &amp; Oshodi</span>
+      <span class="tk-dot">●</span>
+      <!-- duplicate for seamless loop -->
+      <span class="tk"><strong>520,000+</strong> target households</span>
+      <span class="tk-dot">●</span>
+      <span class="tk">Average refill every <strong>3.5 weeks</strong></span>
+      <span class="tk-dot">●</span>
+      <span class="tk"><strong>NMDPRA vetted</strong> suppliers only</span>
+      <span class="tk-dot">●</span>
+      <span class="tk">Delivering in <strong>under 45 minutes</strong></span>
+      <span class="tk-dot">●</span>
+      <span class="tk">Pay on delivery — <strong>zero upfront risk</strong></span>
+      <span class="tk-dot">●</span>
+      <span class="tk">Launching <strong>Q3 2026</strong> · Surulere &amp; Oshodi</span>
+      <span class="tk-dot">●</span>
+    </div>
+  </div>
+
+
+  <!-- ═══ HOW IT WORKS ═══ -->
+  <section id="how" class="s-pad" aria-labelledby="how-title">
+    <div class="container">
+
+      <div class="s-header reveal">
+        <p class="eyebrow">How it works</p>
+        <h2 id="how-title" class="s-title">Gas in 3 taps.<br>Delivered in minutes.</h2>
+        <p class="s-sub">No phone calls. No roadside waiting. No price guessing.</p>
+      </div>
+
+      <ol class="steps" role="list">
+        <li class="step reveal" style="--d:.05s">
+          <div class="step-num-wrap">
+            <span class="step-num" aria-label="Step 1">01</span>
+          </div>
+          <div class="step-body">
+            <div class="step-icon" aria-hidden="true">📍</div>
+            <h3 class="step-title">Set your location</h3>
+            <p class="step-desc">Drop your pin. See verified suppliers nearby, live stock, and real ETAs — no guessing.</p>
+          </div>
+        </li>
+
+        <li class="step reveal" style="--d:.15s">
+          <div class="step-num-wrap">
+            <span class="step-num" aria-label="Step 2">02</span>
+          </div>
+          <div class="step-body">
+            <div class="step-icon" aria-hidden="true">🔥</div>
+            <h3 class="step-title">Choose your cylinder</h3>
+            <p class="step-desc">Pick your size (3 kg – 25 kg). Price is locked upfront — transparent, zero surprises.</p>
+          </div>
+        </li>
+
+        <li class="step reveal" style="--d:.25s">
+          <div class="step-num-wrap">
+            <span class="step-num" aria-label="Step 3">03</span>
+          </div>
+          <div class="step-body">
+            <div class="step-icon" aria-hidden="true">⚡</div>
+            <h3 class="step-title">We run it to you</h3>
+            <p class="step-desc">Nearest supplier dispatches immediately. Track them live. Pay on delivery — cash or card.</p>
+          </div>
+        </li>
+      </ol>
+
+    </div>
+  </section>
+
+
+  <!-- ═══ FEATURES ═══ -->
+  <section id="features" class="s-pad s-sand" aria-labelledby="feat-title">
+    <div class="container">
+
+      <div class="s-header reveal">
+        <p class="eyebrow">Why iRunGas</p>
+        <h2 id="feat-title" class="s-title">Built for how Lagos<br>actually works.</h2>
+      </div>
+
+      <div class="feat-grid">
+        <!-- Large card -->
+        <article class="feat-card feat-card--large reveal" style="--d:.05s">
+          <div class="feat-tag">Core feature</div>
+          <div class="feat-icon" aria-hidden="true">🗺</div>
+          <h3 class="feat-title">Live GPS tracking</h3>
+          <p class="feat-body">Watch your supplier move toward you in real time. Know exactly when to open your door — no more "I dey come" calls that never materialise.</p>
+          <div class="feat-graphic" aria-hidden="true">
+            <div class="fg-track">
+              <div class="fg-line"></div>
+              <div class="fg-dot"></div>
+              <div class="fg-dot fg-dot--dest"></div>
+              <div class="fg-pulse"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="feat-card reveal" style="--d:.1s">
+          <div class="feat-icon" aria-hidden="true">🛡</div>
+          <h3 class="feat-title">Verified suppliers only</h3>
+          <p class="feat-body">Every supplier is NMDPRA-licensed, background-checked and rated by real customers. You know exactly who's coming.</p>
+        </article>
+
+        <article class="feat-card reveal" style="--d:.15s">
+          <div class="feat-icon" aria-hidden="true">💰</div>
+          <h3 class="feat-title">Transparent pricing</h3>
+          <p class="feat-body">Price locked from the moment you confirm. No haggling, no surprise charges at the door. Ever.</p>
+        </article>
+
+        <article class="feat-card feat-card--accent reveal" style="--d:.2s">
+          <div class="feat-icon" aria-hidden="true">⚡</div>
+          <h3 class="feat-title">Gas Wallet</h3>
+          <p class="feat-body">Pre-load your Gas Wallet and earn a <strong>3% bonus credit</strong> on every top-up. Pay in one tap.</p>
+          <div class="feat-badge">3% bonus on top-up</div>
+        </article>
+
+        <article class="feat-card reveal" style="--d:.25s">
+          <div class="feat-icon" aria-hidden="true">📱</div>
+          <h3 class="feat-title">Smart refill alerts</h3>
+          <p class="feat-body">We learn your usage pattern and alert you before you run out. No more Sunday night emergencies.</p>
+        </article>
+
+        <article class="feat-card reveal" style="--d:.3s">
+          <div class="feat-icon" aria-hidden="true">💬</div>
+          <h3 class="feat-title">Order via WhatsApp</h3>
+          <p class="feat-body">No app needed. Message us your address and size on WhatsApp — we handle the rest.</p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══ SUPPLIERS ═══ -->
+  <section id="suppliers" class="s-pad" aria-labelledby="sup-title">
+    <div class="container">
+      <div class="sup-layout">
+
+        <div class="sup-copy reveal-l">
+          <p class="eyebrow">For Suppliers</p>
+          <h2 id="sup-title" class="s-title">More orders.<br>Less hustle.</h2>
+          <p class="sup-sub">Join the iRunGas supplier network and let our platform route verified, ready-to-buy customers directly to you.</p>
+
+          <ul class="perks" role="list">
+            <li><span class="perk-icon" aria-hidden="true">→</span> Instant order alerts — accept or decline in one tap</li>
+            <li><span class="perk-icon" aria-hidden="true">→</span> Settlement within 24–48 hours, directly to your bank</li>
+            <li><span class="perk-icon" aria-hidden="true">→</span> Demand forecasting so you stock smarter, not harder</li>
+            <li><span class="perk-icon" aria-hidden="true">→</span> Build a verified reputation with customer ratings</li>
+            <li><span class="perk-icon" aria-hidden="true">→</span> B2B leads — restaurants, hotels, caterers near you</li>
+          </ul>
+
+          <a href="#waitlist" class="btn-primary">Join as a supplier →</a>
+        </div>
+
+        <div class="sup-stats reveal-r">
+          <div class="stat-grid">
+            <div class="stat-card">
+              <p class="stat-n">48<span>h</span></p>
+              <p class="stat-l">Max settlement time</p>
+            </div>
+            <div class="stat-card stat-card--fire">
+              <p class="stat-n">₦0</p>
+              <p class="stat-l">Upfront cost to join</p>
+            </div>
+            <div class="stat-card">
+              <p class="stat-n">4<span>×</span></p>
+              <p class="stat-l">Avg order volume increase</p>
+            </div>
+            <div class="stat-card">
+              <p class="stat-n">15<span>+</span></p>
+              <p class="stat-l">Suppliers per zone at launch</p>
+            </div>
+            <div class="stat-card stat-card--dark stat-card--wide">
+              <span class="quote-mark" aria-hidden="true">"</span>
+              <p class="quote-text">The faster and more reliable you are, the more orders you receive. You earn your rank by performing.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ COVERAGE ═══ -->
+  <section id="coverage" class="s-pad s-sand" aria-labelledby="cov-title">
+    <div class="container">
+
+      <div class="s-header reveal">
+        <p class="eyebrow">Coverage</p>
+        <h2 id="cov-title" class="s-title">Where iRunGas runs</h2>
+        <p class="s-sub">Depth before width. We'd rather serve you exceptionally in two LGAs than poorly across ten.</p>
+      </div>
+
+      <div class="lga-grid stagger">
+        <div class="lga-card lga-card--live">
+          <div class="lga-live-tag"><span class="pulse-dot pulse-dot--sm" aria-hidden="true"></span> Launching Q3 2026</div>
+          <div class="lga-emoji" aria-hidden="true">🏙</div>
+          <h3 class="lga-name">Surulere</h3>
+          <p class="lga-desc">Phase 1 launch LGA. Deepest supplier coverage. Free first delivery for founding members.</p>
+          <span class="lga-phase">Phase 1</span>
+        </div>
+        <div class="lga-card lga-card--live">
+          <div class="lga-live-tag"><span class="pulse-dot pulse-dot--sm" aria-hidden="true"></span> Launching Q3 2026</div>
+          <div class="lga-emoji" aria-hidden="true">🏙</div>
+          <h3 class="lga-name">Oshodi-Isolo</h3>
+          <p class="lga-desc">High-density residential. Launching simultaneously with Surulere.</p>
+          <span class="lga-phase">Phase 1</span>
+        </div>
+        <div class="lga-card">
+          <div class="lga-emoji" aria-hidden="true" style="opacity:.4">🏙</div>
+          <h3 class="lga-name lga-name--muted">Kosofe</h3>
+          <p class="lga-desc">Expanding after Phase 1 hits 65% repeat order target.</p>
+          <span class="lga-phase lga-phase--soon">Phase 2 · Q1 2027</span>
+        </div>
+        <div class="lga-card">
+          <div class="lga-emoji" aria-hidden="true" style="opacity:.4">🏙</div>
+          <h3 class="lga-name lga-name--muted">Agege + Mushin</h3>
+          <p class="lga-desc">Final Phase 1 expansion zones. Roadmap grows from there.</p>
+          <span class="lga-phase lga-phase--soon">Phase 3 · Q2 2027</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══ WAITLIST ═══ -->
+  <section id="waitlist" class="s-pad" aria-labelledby="wl-title">
+    <div class="container">
+      <div class="wl-outer reveal">
+
+        <div class="wl-copy">
+          <div class="hero-badge" style="margin-bottom:20px">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            Limited early access open
+          </div>
+          <h2 id="wl-title" class="wl-title">
+            Be first when<br><em>iRunGas</em> launches
+          </h2>
+          <p class="wl-sub">Get early access, a free first delivery, and exclusive founding member pricing. No spam — ever.</p>
+
+          <ul class="wl-perks" role="list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="#1D7A55" stroke-width="1.4"/><path d="M5 8l2 2 4-4" stroke="#1D7A55" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Free first delivery
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="#1D7A55" stroke-width="1.4"/><path d="M5 8l2 2 4-4" stroke="#1D7A55" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Priority supplier access
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="#1D7A55" stroke-width="1.4"/><path d="M5 8l2 2 4-4" stroke="#1D7A55" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Founding member pricing, locked in
+            </li>
+          </ul>
+        </div>
+
+        <div class="wl-panel" role="main">
+          <!-- Tabs -->
+          <div class="tab-row" role="tablist" aria-label="Signup type">
+            <button class="tab tab--active" id="tab-consumer" role="tab" aria-selected="true" aria-controls="form-consumer" data-tab="consumer">
+              I'm a Customer
+            </button>
+            <button class="tab" id="tab-supplier" role="tab" aria-selected="false" aria-controls="form-supplier" data-tab="supplier">
+              I'm a Supplier
+            </button>
+          </div>
+
+          <!-- Consumer form -->
+          <form id="form-consumer" class="wl-form" role="tabpanel" aria-labelledby="tab-consumer" data-type="consumer" novalidate>
+            <div class="field-row">
+              <div class="field">
+                <label for="c_first_name">First name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="c_first_name" name="first_name" autocomplete="given-name"
+                       placeholder="Chidi" required maxlength="60"
+                       aria-required="true" aria-describedby="c_first_name_err" />
+                <span class="field-err" id="c_first_name_err" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <label for="c_last_name">Last name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="c_last_name" name="last_name" autocomplete="family-name"
+                       placeholder="Okonkwo" required maxlength="60"
+                       aria-required="true" aria-describedby="c_last_name_err" />
+                <span class="field-err" id="c_last_name_err" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="c_email">Email address <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="c_email" name="email" autocomplete="email"
+                     placeholder="chidi@example.com" required maxlength="254"
+                     aria-required="true" aria-describedby="c_email_err" />
+              <span class="field-err" id="c_email_err" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="c_phone">Phone number</label>
+              <input type="tel" id="c_phone" name="phone" autocomplete="tel"
+                     placeholder="080 XXXX XXXX" maxlength="20"
+                     aria-describedby="c_phone_err" />
+              <span class="field-err" id="c_phone_err" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="c_lga">Your LGA <span class="req" aria-hidden="true">*</span></label>
+              <div class="select-wrap">
+                <select id="c_lga" name="lga" required aria-required="true" aria-describedby="c_lga_err">
+                  <option value="" disabled selected>Select your area</option>
+                  <option value="Surulere">Surulere</option>
+                  <option value="Oshodi-Isolo">Oshodi-Isolo</option>
+                  <option value="Kosofe">Kosofe</option>
+                  <option value="Agege">Agege</option>
+                  <option value="Mushin">Mushin</option>
+                  <option value="Lagos Island">Lagos Island</option>
+                  <option value="Victoria Island">Victoria Island</option>
+                  <option value="Lekki">Lekki</option>
+                  <option value="Other Lagos">Other Lagos</option>
+                </select>
+                <span class="select-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+              <span class="field-err" id="c_lga_err" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="c_cylinder">Cylinder size you usually use</label>
+              <div class="select-wrap">
+                <select id="c_cylinder" name="cylinder_size">
+                  <option value="" disabled selected>Select size</option>
+                  <option value="3kg">3 kg — small household</option>
+                  <option value="5kg">5 kg</option>
+                  <option value="12.5kg">12.5 kg — standard</option>
+                  <option value="25kg">25 kg — large / business</option>
+                </select>
+                <span class="select-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit" aria-describedby="form-global-err">
+              <span class="btn-submit-text">Join waitlist as Customer</span>
+              <svg class="btn-submit-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="btn-submit-spinner" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="display:none"><circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="2" stroke-dasharray="22 14" stroke-linecap="round"/></svg>
+            </button>
+          </form>
+
+          <!-- Supplier form -->
+          <form id="form-supplier" class="wl-form" role="tabpanel" aria-labelledby="tab-supplier" data-type="supplier" novalidate style="display:none">
+            <div class="field-row">
+              <div class="field">
+                <label for="s_first_name">First name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="s_first_name" name="first_name" autocomplete="given-name"
+                       placeholder="Musa" required maxlength="60"
+                       aria-required="true" aria-describedby="s_first_name_err" />
+                <span class="field-err" id="s_first_name_err" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <label for="s_last_name">Last name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="s_last_name" name="last_name" autocomplete="family-name"
+                       placeholder="Suleiman" required maxlength="60"
+                       aria-required="true" aria-describedby="s_last_name_err" />
+                <span class="field-err" id="s_last_name_err" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="s_email">Business email <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="s_email" name="email" autocomplete="email"
+                     placeholder="musa@gasng.com" required maxlength="254"
+                     aria-required="true" aria-describedby="s_email_err" />
+              <span class="field-err" id="s_email_err" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="s_phone">Phone number <span class="req" aria-hidden="true">*</span></label>
+              <input type="tel" id="s_phone" name="phone" autocomplete="tel"
+                     placeholder="080 XXXX XXXX" required maxlength="20"
+                     aria-required="true" aria-describedby="s_phone_err" />
+              <span class="field-err" id="s_phone_err" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="s_business_name">Business name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="s_business_name" name="business_name"
+                     placeholder="Musa Gas Supplies" required maxlength="120"
+                     aria-required="true" aria-describedby="s_business_name_err" />
+              <span class="field-err" id="s_business_name_err" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="s_lga">Operating LGA <span class="req" aria-hidden="true">*</span></label>
+              <div class="select-wrap">
+                <select id="s_lga" name="lga" required aria-required="true" aria-describedby="s_lga_err">
+                  <option value="" disabled selected>Select LGA</option>
+                  <option value="Surulere">Surulere</option>
+                  <option value="Oshodi-Isolo">Oshodi-Isolo</option>
+                  <option value="Kosofe">Kosofe</option>
+                  <option value="Agege">Agege</option>
+                  <option value="Mushin">Mushin</option>
+                  <option value="Lagos Island">Lagos Island</option>
+                  <option value="Other Lagos">Other Lagos</option>
+                </select>
+                <span class="select-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+              <span class="field-err" id="s_lga_err" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="s_nmdpra">NMDPRA licence number (if available)</label>
+              <input type="text" id="s_nmdpra" name="nmdpra_number"
+                     placeholder="NMD-XXXX-XXXX" maxlength="40" />
+            </div>
+
+            <div class="field">
+              <label for="s_volume">Estimated monthly refill volume</label>
+              <div class="select-wrap">
+                <select id="s_volume" name="monthly_volume">
+                  <option value="" disabled selected>Select range</option>
+                  <option value="<50">Less than 50 cylinders</option>
+                  <option value="50-200">50 – 200 cylinders</option>
+                  <option value="200-500">200 – 500 cylinders</option>
+                  <option value="500+">500+ cylinders</option>
+                </select>
+                <span class="select-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit btn-submit--dark" aria-describedby="form-global-err">
+              <span class="btn-submit-text">Join network as Supplier</span>
+              <svg class="btn-submit-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="btn-submit-spinner" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="display:none"><circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="2" stroke-dasharray="22 14" stroke-linecap="round"/></svg>
+            </button>
+          </form>
+
+          <!-- Global error -->
+          <div class="form-global-err" id="form-global-err" role="alert" aria-live="assertive" style="display:none">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.4"/><path d="M8 5v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="8" cy="11" r=".8" fill="currentColor"/></svg>
+            <span id="form-global-err-text"></span>
+          </div>
+
+          <!-- Success state -->
+          <div class="form-success" id="form-success" role="status" aria-live="polite" style="display:none">
+            <div class="success-anim" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="#1D7A55" stroke-width="2"/><path d="M15 24l6 6 12-12" stroke="#1D7A55" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="check-path"/></svg>
+            </div>
+            <h3>You're on the list!</h3>
+            <p>We've saved your details. We'll be in touch as soon as iRunGas launches in your area.</p>
+            <button class="btn-ghost btn-ghost--sm" onclick="window.IRG.resetForm()">Add another person</button>
+          </div>
+
+          <!-- Rate limit warning -->
+          <div class="form-rate-limit" id="form-rate-limit" role="alert" aria-live="assertive" style="display:none">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1L1 14h14L8 1z" stroke="#D97706" stroke-width="1.4" stroke-linejoin="round" fill="none"/><path d="M8 6v3" stroke="#D97706" stroke-width="1.6" stroke-linecap="round"/><circle cx="8" cy="11" r=".8" fill="#D97706"/></svg>
+            <span>Too many attempts. Please wait <strong id="rate-limit-countdown">60</strong> seconds before trying again.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="logo footer-logo" aria-label="iRunGas home">
+            <span class="logo-flame logo-flame--footer" aria-hidden="true">
+              <svg width="18" height="22" viewBox="0 0 18 22" fill="none">
+                <path d="M9 1C9 1 2 8 2 13.5C2 17.09 5.13 20 9 20C12.87 20 16 17.09 16 13.5C16 8 9 1Z" fill="currentColor"/>
+                <ellipse cx="9" cy="14" rx="2.8" ry="3" fill="white" opacity=".35"/>
+              </svg>
+            </span>
+            <span class="logo-text">iRunGas</span>
+          </a>
+          <p class="footer-tagline">The fastest, safest way to get cooking gas delivered to your door in Lagos.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Twitter/X">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zm2-7a2 2 0 100 4 2 2 0 000-4z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <ul role="list">
+              <li><a href="#how">How it works</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#coverage">Coverage</a></li>
+              <li><a href="#waitlist">Early Access</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Suppliers</h4>
+            <ul role="list">
+              <li><a href="#suppliers">Join network</a></li>
+              <li><a href="#">Supplier guide</a></li>
+              <li><a href="#">Safety standards</a></li>
+              <li><a href="#">Supplier terms</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul role="list">
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 iRunGas Technologies Ltd. · Lagos, Nigeria</p>
+        <div class="footer-badges">
+          <span>🇳🇬 Made in Lagos</span>
+          <span>🛡 NMDPRA Compliant</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="supabase.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
