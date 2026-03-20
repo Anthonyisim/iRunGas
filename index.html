@@ -1,0 +1,743 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iRunGas — Lagos Cooking Gas, Delivered Fast</title>
+  <meta name="description" content="Order LPG refills from certified local suppliers. Live tracking. Transparent pricing. Delivered in under 45 minutes anywhere in Lagos." />
+  <meta property="og:title" content="iRunGas — Cooking Gas Delivered in 45 Minutes" />
+  <meta property="og:description" content="Lagos's smartest LPG delivery platform. Order, track, receive." />
+  <meta property="og:type" content="website" />
+  <link rel="icon" href="data:image/png;base64,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" type="image/png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,700&display=swap" rel="stylesheet" />
+
+  <!-- Supabase CDN — must load before supabase.js -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+
+  <!-- Framer Motion for the Web (Motion One API) — physics-based spring animations -->
+  <!-- Exposes window.Motion: { animate, scroll, inView, stagger, spring } -->
+  <script src="https://cdn.jsdelivr.net/npm/motion@11/dist/motion.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══ NAV ═══ -->
+  <header id="navbar">
+    <div class="container">
+      <nav class="nav-inner" role="navigation" aria-label="Main navigation">
+        <a href="#" class="logo logo--img" aria-label="iRunGas home">
+          <img src="data:image/png;base64,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" alt="iRunGas" class="logo-img" width="91" height="80" />
+        </a>
+
+        <ul class="nav-links" id="navLinks" role="list">
+          <li><a href="#how">How it works</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#suppliers">Suppliers</a></li>
+          <li><a href="#coverage">Coverage</a></li>
+        </ul>
+
+        <div class="nav-end">
+          <a href="#waitlist" class="nav-cta">Get early access</a>
+          <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true" role="dialog">
+      <ul role="list">
+        <li><a href="#how" class="mob-link">How it works</a></li>
+        <li><a href="#features" class="mob-link">Features</a></li>
+        <li><a href="#suppliers" class="mob-link">Suppliers</a></li>
+        <li><a href="#coverage" class="mob-link">Coverage</a></li>
+        <li><a href="#waitlist" class="btn-primary mob-cta">Get early access →</a></li>
+      </ul>
+    </div>
+  </header>
+
+
+  <!-- ═══ HERO ═══ -->
+  <section id="hero" aria-label="Hero">
+    <div class="container">
+      <div class="hero-layout">
+
+        <div class="hero-left">
+          <div class="hero-badge fade-in" style="--d:.1s">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            Launching Q3 2026 · Lagos
+          </div>
+
+          <h1 class="hero-h1 fade-in" style="--d:.2s">
+            Cooking Gas delivered.<br>The way it<br><em>should</em> be.
+          </h1>
+
+          <p class="hero-p fade-in" style="--d:.35s">
+            Order Cooking Gas refills from certified local suppliers.
+            Real-time tracking, transparent pricing, and delivery
+            in under 45 minutes — anywhere in Lagos.
+          </p>
+
+          <div class="hero-actions fade-in" style="--d:.45s">
+            <a href="#waitlist" class="btn-primary">
+              Join the waitlist
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#how" class="btn-ghost">See how it works</a>
+          </div>
+
+          <div class="hero-social-proof fade-in" style="--d:.55s">
+            <div class="avatar-stack" aria-hidden="true">
+              <div class="av" style="background:#E8400C">C</div>
+              <div class="av" style="background:#1D7A55">K</div>
+              <div class="av" style="background:#111318">T</div>
+              <div class="av" style="background:#B45309">A</div>
+            </div>
+            <p><strong>340+ people</strong> already on the waitlist</p>
+          </div>
+        </div>
+
+        <div class="hero-right fade-in" style="--d:.3s" aria-hidden="true">
+          <!-- App mockup -->
+          <div class="mockup-card">
+            <div class="mc-topbar">
+              <div class="mc-dot mc-dot-red"></div>
+              <div class="mc-dot mc-dot-amber"></div>
+              <div class="mc-dot mc-dot-green"></div>
+            </div>
+
+            <div class="mc-status-row">
+              <span class="mc-live-tag">
+                <span class="pulse-dot pulse-dot--sm"></span> Live order
+              </span>
+              <span class="mc-time">9:41 AM</span>
+            </div>
+
+            <p class="mc-greeting">Morning, <strong>Chisom</strong> 👋</p>
+
+            <div class="mc-order-row">
+              <div class="mc-order-left">
+                <div class="mc-flame-icon">🔥</div>
+                <div>
+                  <p class="mc-order-name">12.5 kg Refill</p>
+                  <p class="mc-order-sup">Alhaji Gas Co. · Surulere</p>
+                </div>
+              </div>
+              <div class="mc-order-price">₦18,750</div>
+            </div>
+
+            <div class="mc-track">
+              <p class="mc-track-label">Live tracking</p>
+              <div class="mc-steps">
+                <div class="mc-step mc-step--done">
+                  <div class="mc-step-dot"></div>
+                  <div class="mc-step-line mc-step-line--done"></div>
+                  <span>Confirmed</span>
+                </div>
+                <div class="mc-step mc-step--done">
+                  <div class="mc-step-dot"></div>
+                  <div class="mc-step-line mc-step-line--active"></div>
+                  <span>Dispatched</span>
+                </div>
+                <div class="mc-step mc-step--active">
+                  <div class="mc-step-dot mc-step-dot--active"></div>
+                  <div class="mc-step-line"></div>
+                  <span class="mc-step-active-text">En Route</span>
+                </div>
+                <div class="mc-step mc-step--idle">
+                  <div class="mc-step-dot mc-step-dot--idle"></div>
+                  <div class="mc-step-line"></div>
+                  <span class="mc-step-idle-text">Delivered</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="mc-eta-row">
+              <div>
+                <p class="mc-eta-label">Estimated arrival</p>
+                <p class="mc-eta-value">28 <span>min</span></p>
+              </div>
+              <button class="mc-track-btn" tabindex="-1">
+                <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1C4.79 1 3 2.79 3 5c0 3 4 8 4 8s4-5 4-8c0-2.21-1.79-4-4-4z" fill="currentColor" opacity=".2" stroke="currentColor" stroke-width="1.2"/><circle cx="7" cy="5" r="1.5" fill="currentColor"/></svg>
+                Track live
+              </button>
+            </div>
+          </div>
+
+          <!-- Floating chips -->
+          <div class="chip chip--tl">
+            <span class="chip-icon">⚡</span>
+            <div>
+              <p class="chip-label">Fastest ETA</p>
+              <p class="chip-val">45 min max</p>
+            </div>
+          </div>
+          <div class="chip chip--br">
+            <span class="chip-icon">🛡</span>
+            <div>
+              <p class="chip-label">Status</p>
+              <p class="chip-val">NMDPRA verified</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Large decorative word -->
+    <div class="hero-wordmark" aria-hidden="true">iRunGas</div>
+  </section>
+
+
+  <!-- ═══ TICKER ═══ -->
+  <div class="ticker" aria-hidden="true">
+    <div class="ticker-inner">
+      <span class="tk"><strong>520,000+</strong> target households</span>
+      <span class="tk-dot">●</span>
+      <span class="tk">Average refill every <strong>3.5 weeks</strong></span>
+      <span class="tk-dot">●</span>
+      <span class="tk"><strong>NMDPRA vetted</strong> suppliers only</span>
+      <span class="tk-dot">●</span>
+      <span class="tk">Delivering in <strong>under 45 minutes</strong></span>
+      <span class="tk-dot">●</span>
+      <span class="tk">Pay on delivery — <strong>zero upfront risk</strong></span>
+      <span class="tk-dot">●</span>
+      <span class="tk">Launching <strong>Q3 2026</strong> · Surulere &amp; Oshodi</span>
+      <span class="tk-dot">●</span>
+      <!-- duplicate for seamless loop -->
+      <span class="tk"><strong>520,000+</strong> target households</span>
+      <span class="tk-dot">●</span>
+      <span class="tk">Average refill every <strong>3.5 weeks</strong></span>
+      <span class="tk-dot">●</span>
+      <span class="tk"><strong>NMDPRA vetted</strong> suppliers only</span>
+      <span class="tk-dot">●</span>
+      <span class="tk">Delivering in <strong>under 45 minutes</strong></span>
+      <span class="tk-dot">●</span>
+      <span class="tk">Pay on delivery — <strong>zero upfront risk</strong></span>
+      <span class="tk-dot">●</span>
+      <span class="tk">Launching <strong>Q3 2026</strong> · Surulere &amp; Oshodi</span>
+      <span class="tk-dot">●</span>
+    </div>
+  </div>
+
+
+  <!-- ═══ HOW IT WORKS ═══ -->
+  <section id="how" class="s-pad" aria-labelledby="how-title">
+    <div class="container">
+
+      <div class="s-header reveal">
+        <p class="eyebrow">How it works</p>
+        <h2 id="how-title" class="s-title">Gas in 3 taps.<br>Delivered in minutes.</h2>
+        <p class="s-sub">No phone calls. No roadside waiting. No price guessing.</p>
+      </div>
+
+      <ol class="steps" role="list">
+        <li class="step reveal" style="--d:.05s">
+          <div class="step-num-wrap">
+            <span class="step-num" aria-label="Step 1">01</span>
+          </div>
+          <div class="step-body">
+            <div class="step-icon" aria-hidden="true">📍</div>
+            <h3 class="step-title">Set your location</h3>
+            <p class="step-desc">Drop your pin. See verified suppliers nearby, live stock, and real ETAs — no guessing.</p>
+          </div>
+        </li>
+
+        <li class="step reveal" style="--d:.15s">
+          <div class="step-num-wrap">
+            <span class="step-num" aria-label="Step 2">02</span>
+          </div>
+          <div class="step-body">
+            <div class="step-icon" aria-hidden="true">🔥</div>
+            <h3 class="step-title">Choose your cylinder</h3>
+            <p class="step-desc">Pick your size (3 kg – 25 kg). Price is locked upfront — transparent, zero surprises.</p>
+          </div>
+        </li>
+
+        <li class="step reveal" style="--d:.25s">
+          <div class="step-num-wrap">
+            <span class="step-num" aria-label="Step 3">03</span>
+          </div>
+          <div class="step-body">
+            <div class="step-icon" aria-hidden="true">⚡</div>
+            <h3 class="step-title">We run it to you</h3>
+            <p class="step-desc">Nearest supplier dispatches immediately. Track them live. Pay on delivery — cash or card.</p>
+          </div>
+        </li>
+      </ol>
+
+    </div>
+  </section>
+
+
+  <!-- ═══ FEATURES ═══ -->
+  <section id="features" class="s-pad s-sand" aria-labelledby="feat-title">
+    <div class="container">
+
+      <div class="s-header reveal">
+        <p class="eyebrow">Why iRunGas</p>
+        <h2 id="feat-title" class="s-title">Built for how Lagos<br>actually works.</h2>
+      </div>
+
+      <div class="feat-grid">
+        <!-- Large card -->
+        <article class="feat-card feat-card--large reveal" style="--d:.05s">
+          <div class="feat-tag">Core feature</div>
+          <div class="feat-icon" aria-hidden="true">🗺</div>
+          <h3 class="feat-title">Live GPS tracking</h3>
+          <p class="feat-body">Watch your supplier move toward you in real time. Know exactly when to open your door — no more "I dey come" calls that never materialise.</p>
+          <div class="feat-graphic" aria-hidden="true">
+            <div class="fg-track">
+              <div class="fg-line"></div>
+              <div class="fg-dot"></div>
+              <div class="fg-dot fg-dot--dest"></div>
+              <div class="fg-pulse"></div>
+            </div>
+          </div>
+        </article>
+
+        <article class="feat-card reveal" style="--d:.1s">
+          <div class="feat-icon" aria-hidden="true">🛡</div>
+          <h3 class="feat-title">Verified suppliers only</h3>
+          <p class="feat-body">Every supplier is NMDPRA-licensed, background-checked and rated by real customers. You know exactly who's coming.</p>
+        </article>
+
+        <article class="feat-card reveal" style="--d:.15s">
+          <div class="feat-icon" aria-hidden="true">💰</div>
+          <h3 class="feat-title">Transparent pricing</h3>
+          <p class="feat-body">Price locked from the moment you confirm. No haggling, no surprise charges at the door. Ever.</p>
+        </article>
+
+        <article class="feat-card feat-card--accent reveal" style="--d:.2s">
+          <div class="feat-icon" aria-hidden="true">⚡</div>
+          <h3 class="feat-title">Gas Wallet</h3>
+          <p class="feat-body">Pre-load your Gas Wallet and earn a <strong>3% bonus credit</strong> on every top-up. Pay in one tap.</p>
+          <div class="feat-badge">3% bonus on top-up</div>
+        </article>
+
+        <article class="feat-card reveal" style="--d:.25s">
+          <div class="feat-icon" aria-hidden="true">📱</div>
+          <h3 class="feat-title">Smart refill alerts</h3>
+          <p class="feat-body">We learn your usage pattern and alert you before you run out. No more Sunday night emergencies.</p>
+        </article>
+
+        <article class="feat-card reveal" style="--d:.3s">
+          <div class="feat-icon" aria-hidden="true">💬</div>
+          <h3 class="feat-title">Order via WhatsApp</h3>
+          <p class="feat-body">No app needed. Message us your address and size on WhatsApp — we handle the rest.</p>
+        </article>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══ SUPPLIERS ═══ -->
+  <section id="suppliers" class="s-pad" aria-labelledby="sup-title">
+    <div class="container">
+      <div class="sup-layout">
+
+        <div class="sup-copy reveal-l">
+          <p class="eyebrow">For Suppliers</p>
+          <h2 id="sup-title" class="s-title">More orders.<br>Less hustle.</h2>
+          <p class="sup-sub">Join the iRunGas supplier network and let our platform route verified, ready-to-buy customers directly to you.</p>
+
+          <ul class="perks" role="list">
+            <li><span class="perk-icon" aria-hidden="true">→</span> Instant order alerts — accept or decline in one tap</li>
+            <li><span class="perk-icon" aria-hidden="true">→</span> Settlement within 24–48 hours, directly to your bank</li>
+            <li><span class="perk-icon" aria-hidden="true">→</span> Demand forecasting so you stock smarter, not harder</li>
+            <li><span class="perk-icon" aria-hidden="true">→</span> Build a verified reputation with customer ratings</li>
+            <li><span class="perk-icon" aria-hidden="true">→</span> B2B leads — restaurants, hotels, caterers near you</li>
+          </ul>
+
+          <a href="#waitlist" class="btn-primary">Join as a supplier →</a>
+        </div>
+
+        <div class="sup-stats reveal-r">
+          <div class="stat-grid">
+            <div class="stat-card">
+              <p class="stat-n">48<span>h</span></p>
+              <p class="stat-l">Max settlement time</p>
+            </div>
+            <div class="stat-card stat-card--fire">
+              <p class="stat-n">₦0</p>
+              <p class="stat-l">Upfront cost to join</p>
+            </div>
+            <div class="stat-card">
+              <p class="stat-n">4<span>×</span></p>
+              <p class="stat-l">Avg order volume increase</p>
+            </div>
+            <div class="stat-card">
+              <p class="stat-n">15<span>+</span></p>
+              <p class="stat-l">Suppliers per zone at launch</p>
+            </div>
+            <div class="stat-card stat-card--dark stat-card--wide">
+              <span class="quote-mark" aria-hidden="true">"</span>
+              <p class="quote-text">The faster and more reliable you are, the more orders you receive. You earn your rank by performing.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ COVERAGE ═══ -->
+  <section id="coverage" class="s-pad s-sand" aria-labelledby="cov-title">
+    <div class="container">
+
+      <div class="s-header reveal">
+        <p class="eyebrow">Coverage</p>
+        <h2 id="cov-title" class="s-title">Where iRunGas runs</h2>
+        <p class="s-sub">Depth before width. We'd rather serve you exceptionally in two LGAs than poorly across ten.</p>
+      </div>
+
+      <div class="lga-grid stagger">
+        <div class="lga-card lga-card--live">
+          <div class="lga-live-tag"><span class="pulse-dot pulse-dot--sm" aria-hidden="true"></span> Launching Q3 2026</div>
+          <div class="lga-emoji" aria-hidden="true">🏙</div>
+          <h3 class="lga-name">Surulere</h3>
+          <p class="lga-desc">Phase 1 launch LGA. Deepest supplier coverage. Free first delivery for founding members.</p>
+          <span class="lga-phase">Phase 1</span>
+        </div>
+        <div class="lga-card lga-card--live">
+          <div class="lga-live-tag"><span class="pulse-dot pulse-dot--sm" aria-hidden="true"></span> Launching Q3 2026</div>
+          <div class="lga-emoji" aria-hidden="true">🏙</div>
+          <h3 class="lga-name">Oshodi-Isolo</h3>
+          <p class="lga-desc">High-density residential. Launching simultaneously with Surulere.</p>
+          <span class="lga-phase">Phase 1</span>
+        </div>
+        <div class="lga-card">
+          <div class="lga-emoji" aria-hidden="true" style="opacity:.4">🏙</div>
+          <h3 class="lga-name lga-name--muted">Kosofe</h3>
+          <p class="lga-desc">Expanding after Phase 1 hits 65% repeat order target.</p>
+          <span class="lga-phase lga-phase--soon">Phase 2 · Q1 2027</span>
+        </div>
+        <div class="lga-card">
+          <div class="lga-emoji" aria-hidden="true" style="opacity:.4">🏙</div>
+          <h3 class="lga-name lga-name--muted">Agege + Mushin</h3>
+          <p class="lga-desc">Final Phase 1 expansion zones. Roadmap grows from there.</p>
+          <span class="lga-phase lga-phase--soon">Phase 3 · Q2 2027</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══ WAITLIST ═══ -->
+  <section id="waitlist" class="s-pad" aria-labelledby="wl-title">
+    <div class="container">
+      <div class="wl-outer reveal">
+
+        <div class="wl-copy">
+          <div class="hero-badge" style="margin-bottom:20px">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            Limited early access open
+          </div>
+          <h2 id="wl-title" class="wl-title">
+            Be first when<br><em>iRunGas</em> launches
+          </h2>
+          <p class="wl-sub">Get early access, a free first delivery, and exclusive founding member pricing. No spam — ever.</p>
+
+          <ul class="wl-perks" role="list">
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="#1D7A55" stroke-width="1.4"/><path d="M5 8l2 2 4-4" stroke="#1D7A55" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Free first delivery
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="#1D7A55" stroke-width="1.4"/><path d="M5 8l2 2 4-4" stroke="#1D7A55" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Priority supplier access
+            </li>
+            <li>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="7" stroke="#1D7A55" stroke-width="1.4"/><path d="M5 8l2 2 4-4" stroke="#1D7A55" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              Founding member pricing, locked in
+            </li>
+          </ul>
+        </div>
+
+        <div class="wl-panel" role="main">
+          <!-- Tabs -->
+          <div class="tab-row" role="tablist" aria-label="Signup type">
+            <button class="tab tab--active" id="tab-consumer" role="tab" aria-selected="true" aria-controls="form-consumer" data-tab="consumer">
+              I'm a Customer
+            </button>
+            <button class="tab" id="tab-supplier" role="tab" aria-selected="false" aria-controls="form-supplier" data-tab="supplier">
+              I'm a Supplier
+            </button>
+          </div>
+
+          <!-- Consumer form -->
+          <form id="form-consumer" class="wl-form" role="tabpanel" aria-labelledby="tab-consumer" data-type="consumer" novalidate>
+            <div class="field-row">
+              <div class="field">
+                <label for="c_first_name">First name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="c_first_name" name="first_name" autocomplete="given-name"
+                       placeholder="Chidi" required maxlength="60"
+                       aria-required="true" aria-describedby="c_first_name_err" />
+                <span class="field-err" id="c_first_name_err" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <label for="c_last_name">Last name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="c_last_name" name="last_name" autocomplete="family-name"
+                       placeholder="Okonkwo" required maxlength="60"
+                       aria-required="true" aria-describedby="c_last_name_err" />
+                <span class="field-err" id="c_last_name_err" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="c_email">Email address <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="c_email" name="email" autocomplete="email"
+                     placeholder="chidi@example.com" required maxlength="254"
+                     aria-required="true" aria-describedby="c_email_err" />
+              <span class="field-err" id="c_email_err" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="c_phone">Phone number</label>
+              <input type="tel" id="c_phone" name="phone" autocomplete="tel"
+                     placeholder="080 XXXX XXXX" maxlength="20"
+                     aria-describedby="c_phone_err" />
+              <span class="field-err" id="c_phone_err" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="c_lga">Your LGA <span class="req" aria-hidden="true">*</span></label>
+              <div class="select-wrap">
+                <select id="c_lga" name="lga" required aria-required="true" aria-describedby="c_lga_err">
+                  <option value="" disabled selected>Select your area</option>
+                  <option value="Surulere">Surulere</option>
+                  <option value="Oshodi-Isolo">Oshodi-Isolo</option>
+                  <option value="Kosofe">Kosofe</option>
+                  <option value="Agege">Agege</option>
+                  <option value="Mushin">Mushin</option>
+                  <option value="Lagos Island">Lagos Island</option>
+                  <option value="Victoria Island">Victoria Island</option>
+                  <option value="Lekki">Lekki</option>
+                  <option value="Other Lagos">Other Lagos</option>
+                </select>
+                <span class="select-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+              <span class="field-err" id="c_lga_err" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="c_cylinder">Cylinder size you usually use</label>
+              <div class="select-wrap">
+                <select id="c_cylinder" name="cylinder_size">
+                  <option value="" disabled selected>Select size</option>
+                  <option value="3kg">3 kg — small household</option>
+                  <option value="5kg">5 kg</option>
+                  <option value="12.5kg">12.5 kg — standard</option>
+                  <option value="25kg">25 kg — large / business</option>
+                </select>
+                <span class="select-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit" aria-describedby="form-global-err">
+              <span class="btn-submit-text">Join waitlist as Customer</span>
+              <svg class="btn-submit-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="btn-submit-spinner" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="display:none"><circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="2" stroke-dasharray="22 14" stroke-linecap="round"/></svg>
+            </button>
+          </form>
+
+          <!-- Supplier form -->
+          <form id="form-supplier" class="wl-form" role="tabpanel" aria-labelledby="tab-supplier" data-type="supplier" novalidate style="display:none">
+            <div class="field-row">
+              <div class="field">
+                <label for="s_first_name">First name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="s_first_name" name="first_name" autocomplete="given-name"
+                       placeholder="Musa" required maxlength="60"
+                       aria-required="true" aria-describedby="s_first_name_err" />
+                <span class="field-err" id="s_first_name_err" role="alert" aria-live="polite"></span>
+              </div>
+              <div class="field">
+                <label for="s_last_name">Last name <span class="req" aria-hidden="true">*</span></label>
+                <input type="text" id="s_last_name" name="last_name" autocomplete="family-name"
+                       placeholder="Suleiman" required maxlength="60"
+                       aria-required="true" aria-describedby="s_last_name_err" />
+                <span class="field-err" id="s_last_name_err" role="alert" aria-live="polite"></span>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="s_email">Business email <span class="req" aria-hidden="true">*</span></label>
+              <input type="email" id="s_email" name="email" autocomplete="email"
+                     placeholder="musa@gasng.com" required maxlength="254"
+                     aria-required="true" aria-describedby="s_email_err" />
+              <span class="field-err" id="s_email_err" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="s_phone">Phone number <span class="req" aria-hidden="true">*</span></label>
+              <input type="tel" id="s_phone" name="phone" autocomplete="tel"
+                     placeholder="080 XXXX XXXX" required maxlength="20"
+                     aria-required="true" aria-describedby="s_phone_err" />
+              <span class="field-err" id="s_phone_err" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="s_business_name">Business name <span class="req" aria-hidden="true">*</span></label>
+              <input type="text" id="s_business_name" name="business_name"
+                     placeholder="Musa Gas Supplies" required maxlength="120"
+                     aria-required="true" aria-describedby="s_business_name_err" />
+              <span class="field-err" id="s_business_name_err" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="s_lga">Operating LGA <span class="req" aria-hidden="true">*</span></label>
+              <div class="select-wrap">
+                <select id="s_lga" name="lga" required aria-required="true" aria-describedby="s_lga_err">
+                  <option value="" disabled selected>Select LGA</option>
+                  <option value="Surulere">Surulere</option>
+                  <option value="Oshodi-Isolo">Oshodi-Isolo</option>
+                  <option value="Kosofe">Kosofe</option>
+                  <option value="Agege">Agege</option>
+                  <option value="Mushin">Mushin</option>
+                  <option value="Lagos Island">Lagos Island</option>
+                  <option value="Other Lagos">Other Lagos</option>
+                </select>
+                <span class="select-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+              <span class="field-err" id="s_lga_err" role="alert" aria-live="polite"></span>
+            </div>
+
+            <div class="field">
+              <label for="s_nmdpra">NMDPRA licence number (if available)</label>
+              <input type="text" id="s_nmdpra" name="nmdpra_number"
+                     placeholder="NMD-XXXX-XXXX" maxlength="40" />
+            </div>
+
+            <div class="field">
+              <label for="s_volume">Estimated monthly refill volume</label>
+              <div class="select-wrap">
+                <select id="s_volume" name="monthly_volume">
+                  <option value="" disabled selected>Select range</option>
+                  <option value="<50">Less than 50 cylinders</option>
+                  <option value="50-200">50 – 200 cylinders</option>
+                  <option value="200-500">200 – 500 cylinders</option>
+                  <option value="500+">500+ cylinders</option>
+                </select>
+                <span class="select-arrow" aria-hidden="true">
+                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M3 5l4 4 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                </span>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-submit btn-submit--dark" aria-describedby="form-global-err">
+              <span class="btn-submit-text">Join network as Supplier</span>
+              <svg class="btn-submit-arrow" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8h10M8.5 3.5 13 8l-4.5 4.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <svg class="btn-submit-spinner" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true" style="display:none"><circle cx="9" cy="9" r="7" stroke="currentColor" stroke-width="2" stroke-dasharray="22 14" stroke-linecap="round"/></svg>
+            </button>
+          </form>
+
+          <!-- Global error -->
+          <div class="form-global-err" id="form-global-err" role="alert" aria-live="assertive" style="display:none">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><circle cx="8" cy="8" r="6.5" stroke="currentColor" stroke-width="1.4"/><path d="M8 5v3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/><circle cx="8" cy="11" r=".8" fill="currentColor"/></svg>
+            <span id="form-global-err-text"></span>
+          </div>
+
+          <!-- Success state -->
+          <div class="form-success" id="form-success" role="status" aria-live="polite" style="display:none">
+            <div class="success-anim" aria-hidden="true">
+              <svg width="48" height="48" viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="22" stroke="#1D7A55" stroke-width="2"/><path d="M15 24l6 6 12-12" stroke="#1D7A55" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="check-path"/></svg>
+            </div>
+            <h3>You're on the list!</h3>
+            <p>We've saved your details. We'll be in touch as soon as iRunGas launches in your area.</p>
+            <button class="btn-ghost btn-ghost--sm" onclick="window.IRG.resetForm()">Add another person</button>
+          </div>
+
+          <!-- Rate limit warning -->
+          <div class="form-rate-limit" id="form-rate-limit" role="alert" aria-live="assertive" style="display:none">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M8 1L1 14h14L8 1z" stroke="#D97706" stroke-width="1.4" stroke-linejoin="round" fill="none"/><path d="M8 6v3" stroke="#D97706" stroke-width="1.6" stroke-linecap="round"/><circle cx="8" cy="11" r=".8" fill="#D97706"/></svg>
+            <span>Too many attempts. Please wait <strong id="rate-limit-countdown">60</strong> seconds before trying again.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#" class="logo logo--img footer-logo" aria-label="iRunGas home">
+            <img src="data:image/png;base64,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" alt="iRunGas" class="logo-img logo-img--footer" width="91" height="80" />
+          </a>
+          <p class="footer-tagline">The fastest, safest way to get cooking gas delivered to your door in Lagos.</p>
+          <div class="footer-social">
+            <a href="#" class="social-btn" aria-label="Twitter/X">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="Instagram">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            </a>
+            <a href="#" class="social-btn" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zm2-7a2 2 0 100 4 2 2 0 000-4z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-nav" aria-label="Footer navigation">
+          <div class="footer-col">
+            <h4>Product</h4>
+            <ul role="list">
+              <li><a href="#how">How it works</a></li>
+              <li><a href="#features">Features</a></li>
+              <li><a href="#coverage">Coverage</a></li>
+              <li><a href="#waitlist">Early Access</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Suppliers</h4>
+            <ul role="list">
+              <li><a href="#suppliers">Join network</a></li>
+              <li><a href="#">Supplier guide</a></li>
+              <li><a href="#">Safety standards</a></li>
+              <li><a href="#">Supplier terms</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul role="list">
+              <li><a href="#">About us</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Privacy Policy</a></li>
+              <li><a href="#">Terms of Service</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 iRunGas Technologies Ltd. · Lagos, Nigeria</p>
+        <div class="footer-badges">
+          <span>🇳🇬 Made in Lagos</span>
+          <span>🛡 NMDPRA Compliant</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="supabase.js"></script>
+  <script src="main.js"></script>
+  <script src="motion.js"></script>
+</body>
+</html>
